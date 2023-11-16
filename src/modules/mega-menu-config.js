@@ -16,7 +16,7 @@
       let $btnConfig = $li.find('button.sbm-megamenu-config');
       
       if($btnConfig.length > 0) return;
-      $li.find('label.item-title').append(`<button class="sbm-megamenu-config" data-menu-id="${ menuID }">Megamenu Config</button>`);
+      $li.find('label.item-title').append(`<button type="button" class="sbm-megamenu-config" data-menu-id="${ menuID }">Mega Config</button>`);
     })
   }
 

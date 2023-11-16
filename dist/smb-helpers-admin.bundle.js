@@ -24,7 +24,7 @@
       var menuID = $li.find('.menu-item-checkbox').data('menu-item-id');
       var $btnConfig = $li.find('button.sbm-megamenu-config');
       if ($btnConfig.length > 0) return;
-      $li.find('label.item-title').append("<button class=\"sbm-megamenu-config\" data-menu-id=\"".concat(menuID, "\">Megamenu Config</button>"));
+      $li.find('label.item-title').append("<button type=\"button\" class=\"sbm-megamenu-config\" data-menu-id=\"".concat(menuID, "\">Mega Config</button>"));
     });
   };
   var ready = function ready() {
