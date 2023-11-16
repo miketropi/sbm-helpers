@@ -1,4 +1,6 @@
 {
     "/smb-helpers.bundle.js": "/smb-helpers.bundle.js",
+    "/smb-helpers-admin.bundle.js": "/smb-helpers-admin.bundle.js",
+    "/css/smb-helpers-admin.bundle.css": "/css/smb-helpers-admin.bundle.css",
     "/css/smb-helpers.bundle.css": "/css/smb-helpers.bundle.css"
 }

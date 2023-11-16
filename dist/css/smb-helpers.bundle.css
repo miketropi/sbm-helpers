@@ -1,1 +1,11 @@
+.site-container {
+  width: var(--sbm-content-width);
+  max-width: 100%;
+  padding: 0 var(--sbm-spacing-lr);
+}
 
+.header-template--header-mega .header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

@@ -25,6 +25,19 @@ __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
 
+/***/ }),
+
+/***/ "./src/scss/admin.scss":
+/*!*****************************!*\
+  !*** ./src/scss/admin.scss ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
 /***/ })
 
 /******/ 	});
@@ -114,6 +127,7 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
 /******/ 			"/smb-helpers.bundle": 0,
+/******/ 			"css/smb-helpers-admin.bundle": 0,
 /******/ 			"css/smb-helpers.bundle": 0
 /******/ 		};
 /******/ 		
@@ -164,8 +178,9 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["css/smb-helpers.bundle"], () => (__webpack_require__("./src/main.js")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/smb-helpers.bundle"], () => (__webpack_require__("./src/scss/main.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/smb-helpers-admin.bundle","css/smb-helpers.bundle"], () => (__webpack_require__("./src/main.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/smb-helpers-admin.bundle","css/smb-helpers.bundle"], () => (__webpack_require__("./src/scss/main.scss")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/smb-helpers-admin.bundle","css/smb-helpers.bundle"], () => (__webpack_require__("./src/scss/admin.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

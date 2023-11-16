@@ -13,7 +13,7 @@ Text Domain: sbm-helpers
 /**
  * Defined
  */
-define('SBM_VERSION', '1.0.0');
+define('SBM_VERSION', rand(1, 999999));
 define('SBM_DIR', plugin_dir_path(__FILE__));
 define('SBM_URI', plugin_dir_url(__FILE__));
 
