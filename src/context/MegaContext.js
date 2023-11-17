@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import { wp_get_all_menu, save_mega_data, get_mega_data } from '../libs/megamenu-api';
 
 const MegaContext = createContext('');
 const __DATA_MEGA_CONFIG_INIT = {
@@ -11,7 +12,7 @@ const __DATA_MEGA_CONFIG_INIT = {
   tabs: [
     {
       __key: uuidv4(),
-      name: 'Menu item title',
+      name: 'Tab item title',
       href: '#',
       target: '_self',
       settings: {
@@ -51,6 +52,23 @@ const __DATA_MEGA_CONFIG_INIT = {
 const MegaContext_Provider = ({ children, menuid }) => {
   const [megaData, setMegaData] = useState(__DATA_MEGA_CONFIG_INIT);
   const [tabEditing, setTabEditing] = useState(__DATA_MEGA_CONFIG_INIT.tabs[0].__key);
+  const [childrenItemEditing, setChildrenItemEditing] = useState('');
+  const [wpMenus, setWpMenus] = useState([]);
+
+  useEffect(() => {
+    const __wp_get_all_menu = async () => {
+      const menus = await wp_get_all_menu();
+      setWpMenus(menus)
+    }
+
+    const __get_mega_data = async () => {
+      const res = get_mega_data(menuid);
+      console.log(res);
+    }
+
+    __wp_get_all_menu();
+    __get_mega_data();
+  }, [])
 
   const addTabItem = () => {
     let __megaData = {...megaData};
@@ -96,6 +114,43 @@ const MegaContext_Provider = ({ children, menuid }) => {
     setMegaData(__megaData);
   }
 
+  const addMoreChildItem = (__index) => {
+    let __megaData = {...megaData};
+    let tabIndex = __megaData.tabs.findIndex(t => t.__key == tabEditing);
+    __megaData.tabs[tabIndex].children[__index].items.push({
+      __key: uuidv4(),
+      name: 'Nav Item #' + (__megaData.tabs[tabIndex].children[__index].items.length + 1),
+      href: '#',
+      target: '_self'
+    })
+    setMegaData(__megaData);
+  }
+
+  const removeChildNavItem = (c_index, n_index) => {
+    let __megaData = {...megaData};
+    let tabIndex = __megaData.tabs.findIndex(t => t.__key == tabEditing);
+    __megaData.tabs[tabIndex].children[c_index].items.splice(n_index, 1);
+    setMegaData(__megaData);
+  }
+
+  const removeChildItem = (c_index) => {
+    let __megaData = {...megaData};
+    let tabIndex = __megaData.tabs.findIndex(t => t.__key == tabEditing);
+    __megaData.tabs[tabIndex].children.splice(c_index, 1);
+    setMegaData(__megaData);
+  }
+
+  const removeTabItem = (t_index) => {
+    let __megaData = {...megaData};
+    __megaData.tabs.splice(t_index, 1);
+    setMegaData(__megaData);
+  }
+
+  const saveMegaData = async () => {
+    let __megaData = { ...megaData };
+    await save_mega_data(menuid, __megaData);
+  }
+
   const value = {
     version: '1.0.0',
     menuid,
@@ -103,7 +158,14 @@ const MegaContext_Provider = ({ children, menuid }) => {
     tabEditing, setTabEditing,
     addTabItem,
     addChildItem,
-    updateField
+    updateField,
+    childrenItemEditing, setChildrenItemEditing,
+    addMoreChildItem,
+    removeChildNavItem,
+    wpMenus, setWpMenus,
+    removeChildItem,
+    removeTabItem,
+    saveMegaData
   }
 
   return <MegaContext.Provider value={ value }>

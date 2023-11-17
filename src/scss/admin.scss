@@ -39,12 +39,24 @@ $bacnend-accent-color: #3F51B5 !default;
     background: white;
     border-radius: 1px;
     width: 1020px;
+    height: 80%;
     max-width: calc(100% - 40px); 
     opacity: 0;
     transform: translateY(10%);
     -webkit-transform: translateY(10%);
     transition: .5s ease;
     -webkit-transition: .5s ease;
+
+    #SBM_MEGAMENU_CONFIG_ROOT {
+      height: 100%;
+      overflow: auto;
+      position: relative;
+    }
+
+    .__disable {
+      opacity: .5;
+      pointer-events: none;
+    }
   }
 }
 
@@ -79,6 +91,70 @@ body.sbm-megamenu-config-popup__show {
   .edit-title {
     margin: .3em 0;
     font-size: 1.3em;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .__tools {
+      display: flex;
+      align-items: center;
+      font-size: .9em;
+      font-weight: bold;
+
+      .sbm-btn {
+        margin-left: 2em;
+        background: #3f51b5;
+        width: 120px;
+        padding: 0.7em;
+        display: inline-block;
+        cursor: pointer;
+      }
+
+      .megamenu-onoff {
+        display: flex;
+        align-items: center;
+
+        .toogle-ui {
+          margin-right: .5em;
+        }
+      }
+
+      .toogle-ui {
+        width: 40px;
+        height: 20px;
+        border-radius: 30px;
+        background: #eee;
+        border: solid 1px #ddd;
+        position: relative;
+        cursor: pointer;
+        transition: .3s ease;
+        -webkit-transition: .3s ease;
+
+        &.__active {
+          background: #3f51b517;
+
+          .toogle-ui__dot {
+            background: #3f51b5;
+            left: calc(100% - 20px);
+          }
+        }
+
+        &__dot {
+          width: 18px;
+          height: 18px;
+          border-radius: 18px;
+          position: absolute;
+          left: 2px;
+          top: 50%;
+          transform: translateY(-50%);
+          -webkit-transform: translateY(-50%);
+          background: gray;
+          transition: .3s ease;
+          -webkit-transition: .3s ease;
+        }
+      }
+    }
   }
 
   .megamenu-tab-config {
@@ -127,7 +203,12 @@ body.sbm-megamenu-config-popup__show {
         }
 
         .tab-heading-item {
-          
+          display: flex;
+          justify-content: space-between;
+
+          .__remove-tab {
+            cursor: pointer;
+          }
         }
       }
     }
@@ -164,6 +245,8 @@ body.sbm-megamenu-config-popup__show {
       }
       
       .field-item {
+        margin-bottom: .8em;
+        display: block;
 
         &__label {
           display: block;
@@ -195,6 +278,12 @@ body.sbm-megamenu-config-popup__show {
           fieldset {
             position: relative;
             height: 100%;
+            display: flex;
+            flex-direction: column;
+
+            .sbm-btn {
+              margin-top: auto;
+            }
           }
         }
 
@@ -235,5 +324,56 @@ body.sbm-megamenu-config-popup__show {
 
   > * {
     width: calc((100% / 3) - 20px);
+  }
+}
+
+.sbm-btn {
+  display: block;
+  background: black;
+  color: white;
+  font-weight: bold;
+  font-size: .9em;
+  border: none;
+  border-radius: 1px;
+  padding: .8em 1em;
+}
+
+.children__nav-list {
+  margin: 0 0 1em 0;
+
+  .add-more-nav-item {
+    width: 100%;
+    background: no-repeat;
+    color: black;
+    border: solid 2px;
+  }
+
+  .nav-item {
+    border-bottom: solid 1px #eee;
+    padding: .3em 0;
+
+    .__label {
+      display: flex;
+      justify-content: space-between;
+
+      .__remove {
+        margin-left: auto;
+        margin-right: 4px;
+      }
+
+      .dashicons {
+        cursor: pointer;
+      }
+    }
+
+    .edit-item-nav {
+      background: #fafafa;
+      padding: 1em;
+      border: solid 1px #ddd;
+      margin-top: .5em;
+      cursor: pointer;
+    }
+
+    
   }
 }
