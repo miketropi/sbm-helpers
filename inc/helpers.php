@@ -16,5 +16,6 @@ function sbm_update_mega_item($id, $data) {
 }
 
 function sbm_get_mega_item($id) {
-  return get_option('__SBM_MEGA_MENU_ITEM_' . $id);
+  $opts = get_option('__SBM_MEGA_MENU_ITEM_' . $id);
+  return $opts;
 }
