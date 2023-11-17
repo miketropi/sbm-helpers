@@ -12,52 +12,60 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ MegamenuConfigPanel)
 /* harmony export */ });
-/* harmony import */ var _context_MegaContext__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../context/MegaContext */ "./src/context/MegaContext.js");
-/* harmony import */ var _MegamenuTabConfig__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./MegamenuTabConfig */ "./src/components/MegamenuTabConfig.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _context_MegaContext__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../context/MegaContext */ "./src/context/MegaContext.js");
+/* harmony import */ var _MegamenuTabConfig__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./MegamenuTabConfig */ "./src/components/MegamenuTabConfig.js");
+/* harmony import */ var _libs_helpers__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../libs/helpers */ "./src/libs/helpers.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
 
 
 
 
 function MegamenuConfigPanel() {
-  var _useMegaContext = (0,_context_MegaContext__WEBPACK_IMPORTED_MODULE_0__.useMegaContext)(),
+  var _useMegaContext = (0,_context_MegaContext__WEBPACK_IMPORTED_MODULE_1__.useMegaContext)(),
     menuid = _useMegaContext.menuid,
     megaData = _useMegaContext.megaData,
     setMegaData = _useMegaContext.setMegaData,
     updateField = _useMegaContext.updateField,
-    saveMegaData = _useMegaContext.saveMegaData;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+    saveMegaData = _useMegaContext.saveMegaData,
+    saving = _useMegaContext.saving;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
     className: "megamenu-config-panel",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-      className: "edit-title",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("h4", {
-        children: ["Edit menu item #", menuid]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "__tools",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-          className: "megamenu-onoff",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-            className: ['toogle-ui', megaData.settings.enable ? '__active' : ''].join(' '),
-            onClick: function onClick(e) {
-              e.preventDefault();
-              updateField(!megaData.settings.enable, 'settings.enable');
-            },
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-              className: "toogle-ui__dot"
-            })
-          }), megaData.settings.enable ? 'Enable' : 'Disable']
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
-          className: "sbm-btn",
-          onClick: saveMegaData,
-          children: "Save"
+    children: megaData.settings && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+        className: "edit-title",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("h4", {
+          children: ["Edit menu item #", menuid]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+          className: "__tools",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+            className: "megamenu-onoff",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+              className: ['toogle-ui', (0,_libs_helpers__WEBPACK_IMPORTED_MODULE_3__._Boolean)(megaData.settings.enable) ? '__active' : ''].join(' '),
+              onClick: function onClick(e) {
+                e.preventDefault();
+                updateField(!(0,_libs_helpers__WEBPACK_IMPORTED_MODULE_3__._Boolean)(megaData.settings.enable), 'settings.enable');
+              },
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+                className: "toogle-ui__dot"
+              })
+            }), (0,_libs_helpers__WEBPACK_IMPORTED_MODULE_3__._Boolean)(megaData.settings.enable) ? 'Enable' : 'Disable']
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
+            className: ['sbm-btn', saving ? 'sbm-loading' : ''].join(' '),
+            onClick: saveMegaData,
+            children: saving ? 'Saving...' : 'Save'
+          })]
         })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("hr", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+        className: [(0,_libs_helpers__WEBPACK_IMPORTED_MODULE_3__._Boolean)(megaData.settings.enable) ? '' : '__disable'],
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_MegamenuTabConfig__WEBPACK_IMPORTED_MODULE_2__["default"], {
+          tabs: megaData.tabs
+        })
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("hr", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-      className: [megaData.settings.enable ? '' : '__disable'],
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_MegamenuTabConfig__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        tabs: megaData.tabs
-      })
-    })]
+    })
   });
 }
 
@@ -187,7 +195,7 @@ function MegamenuTabConfig(_ref) {
             style: {
               '--cols': i.settings.columns
             },
-            children: [i.children.map(function (c, c_index) {
+            children: [(i === null || i === void 0 ? void 0 : i.children) && i.children.map(function (c, c_index) {
               return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
                 className: "children-item",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("fieldset", {
@@ -236,7 +244,7 @@ function MegamenuTabConfig(_ref) {
                       children: "Items"
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("ul", {
                       className: "children__nav-list",
-                      children: [c.items.map(function (n, n_index) {
+                      children: [(c === null || c === void 0 ? void 0 : c.items) && c.items.map(function (n, n_index) {
                         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("li", {
                           className: "nav-item",
                           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
@@ -449,11 +457,11 @@ var __DATA_MEGA_CONFIG_INIT = {
 var MegaContext_Provider = function MegaContext_Provider(_ref) {
   var children = _ref.children,
     menuid = _ref.menuid;
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(__DATA_MEGA_CONFIG_INIT),
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}),
     _useState2 = _slicedToArray(_useState, 2),
     megaData = _useState2[0],
     setMegaData = _useState2[1];
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(__DATA_MEGA_CONFIG_INIT.tabs[0].__key),
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
     _useState4 = _slicedToArray(_useState3, 2),
     tabEditing = _useState4[0],
     setTabEditing = _useState4[1];
@@ -465,6 +473,10 @@ var MegaContext_Provider = function MegaContext_Provider(_ref) {
     _useState8 = _slicedToArray(_useState7, 2),
     wpMenus = _useState8[0],
     setWpMenus = _useState8[1];
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    _useState10 = _slicedToArray(_useState9, 2),
+    saving = _useState10[0],
+    setSaving = _useState10[1];
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     var __wp_get_all_menu = /*#__PURE__*/function () {
       var _ref2 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
@@ -493,9 +505,21 @@ var MegaContext_Provider = function MegaContext_Provider(_ref) {
         return _regeneratorRuntime().wrap(function _callee2$(_context2) {
           while (1) switch (_context2.prev = _context2.next) {
             case 0:
-              res = (0,_libs_megamenu_api__WEBPACK_IMPORTED_MODULE_1__.get_mega_data)(menuid);
-              console.log(res);
+              _context2.next = 2;
+              return (0,_libs_megamenu_api__WEBPACK_IMPORTED_MODULE_1__.get_mega_data)(menuid);
             case 2:
+              res = _context2.sent;
+              if (res) {
+                _context2.next = 7;
+                break;
+              }
+              setMegaData(__DATA_MEGA_CONFIG_INIT);
+              setTabEditing(__DATA_MEGA_CONFIG_INIT.tabs[0].__key);
+              return _context2.abrupt("return");
+            case 7:
+              setMegaData(res);
+              setTabEditing(res.tabs[0].__key);
+            case 9:
             case "end":
               return _context2.stop();
           }
@@ -529,6 +553,9 @@ var MegaContext_Provider = function MegaContext_Provider(_ref) {
     var tabIndex = __megaData.tabs.findIndex(function (t) {
       return t.__key == tabEditing;
     });
+    if (!__megaData.tabs[tabIndex].children) {
+      __megaData.tabs[tabIndex].children = [];
+    }
     __megaData.tabs[tabIndex].children.push({
       __key: (0,uuid__WEBPACK_IMPORTED_MODULE_3__["default"])(),
       type: '__CUSTOM_MENU__',
@@ -586,9 +613,12 @@ var MegaContext_Provider = function MegaContext_Provider(_ref) {
         while (1) switch (_context3.prev = _context3.next) {
           case 0:
             __megaData = _objectSpread({}, megaData);
-            _context3.next = 3;
+            setSaving(true);
+            _context3.next = 4;
             return (0,_libs_megamenu_api__WEBPACK_IMPORTED_MODULE_1__.save_mega_data)(menuid, __megaData);
-          case 3:
+          case 4:
+            setSaving(false);
+          case 5:
           case "end":
             return _context3.stop();
         }
@@ -616,7 +646,9 @@ var MegaContext_Provider = function MegaContext_Provider(_ref) {
     setWpMenus: setWpMenus,
     removeChildItem: removeChildItem,
     removeTabItem: removeTabItem,
-    saveMegaData: saveMegaData
+    saveMegaData: saveMegaData,
+    saving: saving,
+    setSaving: setSaving
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(MegaContext.Provider, {
     value: value,
@@ -625,6 +657,23 @@ var MegaContext_Provider = function MegaContext_Provider(_ref) {
 };
 var useMegaContext = function useMegaContext() {
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(MegaContext);
+};
+
+
+/***/ }),
+
+/***/ "./src/libs/helpers.js":
+/*!*****************************!*\
+  !*** ./src/libs/helpers.js ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   _Boolean: () => (/* binding */ _Boolean)
+/* harmony export */ });
+var _Boolean = function _Boolean(value) {
+  return JSON.parse(value);
 };
 
 

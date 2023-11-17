@@ -63,6 +63,7 @@ export default function MegamenuTabConfig({ tabs }) {
 
             <div className="childrens" style={ {'--cols': i.settings.columns} }>
               {
+                i?.children &&
                 i.children.map((c, c_index) => {
                   return <div className="children-item" key={ c.__key }>
                     <fieldset>
@@ -97,6 +98,7 @@ export default function MegamenuTabConfig({ tabs }) {
                           <span className="field-item__label">Items</span>
                           <ul className="children__nav-list">
                             {
+                              c?.items &&
                               c.items.map((n, n_index) => {
                                 return <li className="nav-item" key={ n.__key }>
                                   <div className="__label">

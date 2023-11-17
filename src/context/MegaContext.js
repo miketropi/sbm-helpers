@@ -50,10 +50,11 @@ const __DATA_MEGA_CONFIG_INIT = {
 };
 
 const MegaContext_Provider = ({ children, menuid }) => {
-  const [megaData, setMegaData] = useState(__DATA_MEGA_CONFIG_INIT);
-  const [tabEditing, setTabEditing] = useState(__DATA_MEGA_CONFIG_INIT.tabs[0].__key);
+  const [megaData, setMegaData] = useState({});
+  const [tabEditing, setTabEditing] = useState('');
   const [childrenItemEditing, setChildrenItemEditing] = useState('');
   const [wpMenus, setWpMenus] = useState([]);
+  const [saving, setSaving] = useState(false);
 
   useEffect(() => {
     const __wp_get_all_menu = async () => {
@@ -62,8 +63,15 @@ const MegaContext_Provider = ({ children, menuid }) => {
     }
 
     const __get_mega_data = async () => {
-      const res = get_mega_data(menuid);
-      console.log(res);
+      const res = await get_mega_data(menuid);
+      if(!res) {
+        setMegaData(__DATA_MEGA_CONFIG_INIT);
+        setTabEditing(__DATA_MEGA_CONFIG_INIT.tabs[0].__key);
+        return;
+      }
+
+      setMegaData(res);
+      setTabEditing(res.tabs[0].__key);
     }
 
     __wp_get_all_menu();
@@ -91,6 +99,11 @@ const MegaContext_Provider = ({ children, menuid }) => {
   const addChildItem = () => {
     let __megaData = {...megaData};
     let tabIndex = __megaData.tabs.findIndex(t => t.__key == tabEditing);
+
+    if(!__megaData.tabs[tabIndex].children) {
+      __megaData.tabs[tabIndex].children = []
+    }
+
     __megaData.tabs[tabIndex].children.push({
       __key: uuidv4(),
       type: '__CUSTOM_MENU__',
@@ -148,7 +161,9 @@ const MegaContext_Provider = ({ children, menuid }) => {
 
   const saveMegaData = async () => {
     let __megaData = { ...megaData };
+    setSaving(true);
     await save_mega_data(menuid, __megaData);
+    setSaving(false);
   }
 
   const value = {
@@ -165,7 +180,8 @@ const MegaContext_Provider = ({ children, menuid }) => {
     wpMenus, setWpMenus,
     removeChildItem,
     removeTabItem,
-    saveMegaData
+    saveMegaData,
+    saving, setSaving
   }
 
   return <MegaContext.Provider value={ value }>

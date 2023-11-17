@@ -6,4 +6,8 @@ mix
   .react()
   .sass('./src/scss/main.scss', 'css/smb-helpers.bundle.css')
   .sass('./src/scss/admin.scss', 'css/smb-helpers-admin.bundle.css')
+  .options({
+    processCssUrls: false
+  })
   .setPublicPath('dist')
+  
