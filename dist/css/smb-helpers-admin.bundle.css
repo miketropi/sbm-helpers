@@ -53,6 +53,31 @@
   opacity: 0.5;
   pointer-events: none;
 }
+.sbm-megamenu-config-popup__inner .extra-text {
+  padding: 2em 0;
+}
+.sbm-megamenu-config-popup__inner .field-item {
+  margin-bottom: 0.8em;
+  display: block;
+}
+.sbm-megamenu-config-popup__inner .field-item__label {
+  display: block;
+  font-size: 0.9em;
+  font-weight: bold;
+  margin-bottom: 0.2em;
+}
+.sbm-megamenu-config-popup__inner .field-item input[type=text],
+.sbm-megamenu-config-popup__inner .field-item select,
+.sbm-megamenu-config-popup__inner .field-item textarea {
+  width: 100%;
+  border: solid 1px #eee;
+  border-radius: 1px;
+}
+.sbm-megamenu-config-popup__inner .field-item textarea {
+  height: 150px;
+  padding: 0.7em;
+  background: #fafafa;
+}
 
 body.sbm-megamenu-config-popup__show .sbm-megamenu-config-popup {
   visibility: visible;
@@ -96,11 +121,14 @@ body.sbm-megamenu-config-popup__show .sbm-megamenu-config-popup__close {
   display: inline-block;
   cursor: pointer;
 }
-.megamenu-config-panel .edit-title .__tools .megamenu-onoff {
+.megamenu-config-panel .edit-title .__tools .megamenu-onoff,
+.megamenu-config-panel .edit-title .__tools .extra-onoff {
   display: flex;
   align-items: center;
+  margin-right: 2em;
 }
-.megamenu-config-panel .edit-title .__tools .megamenu-onoff .toogle-ui {
+.megamenu-config-panel .edit-title .__tools .megamenu-onoff .toogle-ui,
+.megamenu-config-panel .edit-title .__tools .extra-onoff .toogle-ui {
   margin-right: 0.5em;
 }
 .megamenu-config-panel .edit-title .__tools .toogle-ui {
@@ -206,22 +234,6 @@ body.sbm-megamenu-config-popup__show .sbm-megamenu-config-popup__close {
   text-transform: uppercase;
   font-size: 0.8em;
   letter-spacing: 1px;
-}
-.megamenu-config-panel .megamenu-tab-config .tab-content .field-item {
-  margin-bottom: 0.8em;
-  display: block;
-}
-.megamenu-config-panel .megamenu-tab-config .tab-content .field-item__label {
-  display: block;
-  font-size: 0.9em;
-  font-weight: bold;
-  margin-bottom: 0.2em;
-}
-.megamenu-config-panel .megamenu-tab-config .tab-content .field-item input[type=text],
-.megamenu-config-panel .megamenu-tab-config .tab-content .field-item select {
-  width: 100%;
-  border: solid 1px #eee;
-  border-radius: 1px;
 }
 .megamenu-config-panel .megamenu-tab-config .tab-content .childrens {
   display: flex;

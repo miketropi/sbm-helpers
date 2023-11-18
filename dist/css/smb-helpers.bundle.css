@@ -2,10 +2,181 @@
   width: var(--sbm-content-width);
   max-width: 100%;
   padding: 0 var(--sbm-spacing-lr);
+  margin: 0 auto;
 }
 
 .header-template--header-mega .header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.sbm-menu {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+.sbm-menu .sbm-mega-menu {
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s ease;
+  -webkit-transition: 0.3s ease;
+}
+.sbm-menu .sub-menu {
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s ease;
+  -webkit-transition: 0.3s ease;
+  position: absolute;
+  z-index: 99;
+  background: white;
+  margin: 0;
+  padding: 0;
+}
+.sbm-menu .sub-menu > li {
+  width: 100%;
+  margin: 0 !important;
+  width: 200px;
+}
+.sbm-menu .sub-menu > li > a {
+  padding: 1em;
+  display: block;
+}
+.sbm-menu .sub-menu > li:hover a {
+  background: #eee;
+}
+.sbm-menu .menu-item {
+  list-style: none;
+}
+.sbm-menu .menu-item > a {
+  color: var(--sbm-accent-color);
+  padding: 1.5em 0;
+  display: inline-block;
+}
+.sbm-menu .menu-item:not(:last-child) {
+  margin-right: 5em;
+}
+.sbm-menu .menu-item > .sbm-mega-menu {
+  position: absolute;
+  left: 0;
+  z-index: 99;
+  background: white;
+  width: 100%;
+}
+.sbm-menu .menu-item:hover > .sbm-mega-menu,
+.sbm-menu .menu-item:hover > .sub-menu {
+  visibility: visible;
+  opacity: 1;
+}
+
+.sbm-mega-menu__inner.__has-extra-text {
+  display: flex;
+  justify-content: space-between;
+}
+.sbm-mega-menu__inner.__has-extra-text .sbm-mega-menu__tab {
+  width: 65%;
+}
+.sbm-mega-menu__inner.__has-extra-text .sbm-mega-menu__extra-text {
+  width: 35%;
+  background: #E9E9E9;
+  padding: 3em 1.5em 2em;
+}
+.sbm-mega-menu__inner.__has-extra-text .sbm-mega-menu__extra-text h4 {
+  margin: 0 0 1em 0;
+  color: #666666;
+  font-weight: bold;
+}
+.sbm-mega-menu__inner.__has-extra-text .sbm-mega-menu__extra-text ul {
+  margin: 0;
+  padding: 0;
+}
+.sbm-mega-menu__inner.__has-extra-text .sbm-mega-menu__extra-text ul li {
+  list-style: none;
+}
+.sbm-mega-menu__inner.__has-extra-text .sbm-mega-menu__extra-text ul li a {
+  color: var(--sbm-accent-color);
+  margin-bottom: 1em;
+  display: block;
+}
+.sbm-mega-menu__tab {
+  display: flex;
+  justify-content: space-between;
+  padding: 3em 0 2em;
+}
+.sbm-mega-menu__tab-heading {
+  width: 200px;
+}
+.sbm-mega-menu__tab-content {
+  width: calc(100% - 230px);
+}
+.sbm-mega-menu__tab-heading-ul {
+  margin: 0;
+  padding: 0;
+}
+.sbm-mega-menu__tab-heading-ul li {
+  list-style: none;
+}
+.sbm-mega-menu__tab-heading-ul li a {
+  display: block;
+  padding: 1em;
+  color: var(--sbm-accent-color);
+  transition: 0.3s ease;
+  -webkit-transition: 0.3s ease;
+}
+.sbm-mega-menu__tab-heading-ul li a:hover {
+  opacity: 0.8;
+}
+.sbm-mega-menu__tab-heading-ul li.tab-heading-item.__active {
+  background: #E9E9E9;
+  border-right: solid 4px var(--sbm-accent-color);
+}
+.sbm-mega-menu__tab-content .tab-content-item {
+  display: none;
+}
+.sbm-mega-menu__tab-content .tab-content-item.__active {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+}
+.sbm-mega-menu__tab-content .tab-content-item.__active .sbm-mega-menu__children-item {
+  padding: 0 15px;
+  margin-bottom: 1em;
+  box-sizing: border-box;
+}
+.sbm-mega-menu__tab-content .tab-content-item.__active .sbm-mega-menu__children-item h4 {
+  margin: 0 0 1em 0;
+  color: #666666;
+  font-weight: bold;
+}
+.sbm-mega-menu__tab-content .tab-content-item.__active.__columns-1 .sbm-mega-menu__children-item {
+  width: 100%;
+}
+.sbm-mega-menu__tab-content .tab-content-item.__active.__columns-2 .sbm-mega-menu__children-item {
+  width: 50%;
+}
+.sbm-mega-menu__tab-content .tab-content-item.__active.__columns-3 .sbm-mega-menu__children-item {
+  width: 33.3333333333%;
+}
+.sbm-mega-menu__tab-content .tab-content-item.__active.__columns-4 .sbm-mega-menu__children-item {
+  width: 25%;
+}
+
+.sbm-custom-nav {
+  margin: 0;
+  padding: 0;
+}
+.sbm-custom-nav .sbm-custom-nav__item {
+  list-style: none;
+}
+.sbm-custom-nav .sbm-custom-nav__item a {
+  color: var(--sbm-accent-color);
+  display: block;
+  margin-bottom: 1em;
+  transition: 0.3s ease;
+  -webkit-transition: 0.3s ease;
+}
+.sbm-custom-nav .sbm-custom-nav__item a:hover {
+  opacity: 0.8;
 }

@@ -130,6 +130,11 @@ const MegaContext_Provider = ({ children, menuid }) => {
   const addMoreChildItem = (__index) => {
     let __megaData = {...megaData};
     let tabIndex = __megaData.tabs.findIndex(t => t.__key == tabEditing);
+
+    if(!__megaData.tabs[tabIndex].children[__index].items) {
+      __megaData.tabs[tabIndex].children[__index].items = [];
+    }
+
     __megaData.tabs[tabIndex].children[__index].items.push({
       __key: uuidv4(),
       name: 'Nav Item #' + (__megaData.tabs[tabIndex].children[__index].items.length + 1),

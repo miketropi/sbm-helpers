@@ -25,8 +25,12 @@ require(SBM_DIR . '/inc/helpers.php');
 require(SBM_DIR . '/inc/hooks.php');
 require(SBM_DIR . '/inc/ajax.php');
 require(SBM_DIR . '/inc/template-tags.php');
-
 require(SBM_DIR . '/inc/admin/megamenu.php');
+
+/**
+ * Class
+ */
+require(SBM_DIR . '/inc/class/sbm-mega-menu-walker.php');
 
 /**
  * Boot

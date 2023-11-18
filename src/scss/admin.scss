@@ -57,6 +57,36 @@ $bacnend-accent-color: #3F51B5 !default;
       opacity: .5;
       pointer-events: none;
     }
+
+    .extra-text {
+      padding: 2em 0;
+    }
+
+    .field-item {
+      margin-bottom: .8em;
+      display: block;
+
+      &__label {
+        display: block;
+        font-size: .9em;
+        font-weight: bold;
+        margin-bottom: 0.2em;
+      }
+
+      input[type=text],
+      select,
+      textarea {
+        width: 100%;
+        border: solid 1px #eee;
+        border-radius: 1px;
+      }
+
+      textarea {
+        height: 150px;
+        padding: .7em;
+        background: #fafafa;
+      }
+    }
   }
 }
 
@@ -111,9 +141,11 @@ body.sbm-megamenu-config-popup__show {
         cursor: pointer;
       }
 
-      .megamenu-onoff {
+      .megamenu-onoff,
+      .extra-onoff {
         display: flex;
         align-items: center;
+        margin-right: 2em;
 
         .toogle-ui {
           margin-right: .5em;
@@ -241,25 +273,6 @@ body.sbm-megamenu-config-popup__show {
           text-transform: uppercase;
           font-size: .8em;
           letter-spacing: 1px;
-        }
-      }
-      
-      .field-item {
-        margin-bottom: .8em;
-        display: block;
-
-        &__label {
-          display: block;
-          font-size: .9em;
-          font-weight: bold;
-          margin-bottom: 0.2em;
-        }
-
-        input[type=text],
-        select {
-          width: 100%;
-          border: solid 1px #eee;
-          border-radius: 1px;
         }
       }
 

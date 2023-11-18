@@ -2,3 +2,4 @@
  * Main script
  * 
  */
+import './menu';
