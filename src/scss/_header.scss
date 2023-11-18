@@ -5,4 +5,38 @@
     justify-content: space-between;
     align-items: center;
   }
+
+  .brand-image {
+
+  }
+
+  .site-nav {
+    padding-top: 32px;
+  }
+
+  .action-buttons {
+
+    .action-buttons-list {
+      display: flex;
+      justify-content: flex-end;
+
+      .__item {
+        list-style: none;
+        
+        &:not(:last-child) {
+          margin-right: 20px;
+        }
+
+        a {
+          background: var(--sbm-accent-color);
+          color: white;
+          border-radius: 30px;
+          padding: 0.3em 1em;
+          display: inline-block;
+          font-size: 0.9em;
+          line-height: normal;
+        }
+      }
+    }
+  }
 }

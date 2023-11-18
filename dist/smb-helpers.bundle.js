@@ -29,9 +29,20 @@ __webpack_require__.r(__webpack_exports__);
 (function (w, $) {
   'use strict';
 
-  var menuMenu = function menuMenu() {};
-  var addArrow = function addArrow() {};
-  var menu = function menu() {};
+  var megaMenuActiveTab = function megaMenuActiveTab() {
+    $('body').on('mouseover', '.sbm-mega-menu__tab-heading-ul .tab-heading-item', function (e) {
+      var __key = $(this).data('key');
+      var __content_class = ".tab-content-item__".concat(__key);
+      $(this).addClass('__active').siblings().removeClass('__active');
+      $(__content_class).addClass('__active').siblings().removeClass('__active');
+    });
+  };
+  var menuMenu = function menuMenu() {
+    megaMenuActiveTab();
+  };
+  var menu = function menu() {
+    menuMenu();
+  };
   $(menu);
 })(window, jQuery);
 

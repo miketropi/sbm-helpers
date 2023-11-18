@@ -15,8 +15,18 @@ function sbm_mega_menu_start_el($item_output, $menu_item, $depth, $args) {
   return $item_output . $megamenu_content;
 }
 
-add_filter('nav_menu_link_attributes', '', 20 , 4);
+add_filter('nav_menu_item_attributes', 'sbm_megamenu_nav_menu_link_attributes', 20 , 4);
 
 function sbm_megamenu_nav_menu_link_attributes($atts, $menu_item, $args, $depth) {
+  if($depth != 0) return $atts;
+
+  $megadata = sbm_get_mega_item($menu_item->ID);
+  if(!$megadata) return;
+  $enable = filter_var($megadata['settings']['enable'], FILTER_VALIDATE_BOOLEAN);
+
+  if($enable) {
+    $atts['class'] .= ' __sbm-has-megamenu';
+  }
+
   return $atts;
 }
