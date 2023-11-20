@@ -708,7 +708,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   _FixQuoteHtml: () => (/* binding */ _FixQuoteHtml)
 /* harmony export */ });
 var _Boolean = function _Boolean(value) {
-  return JSON.parse(value);
+  return value ? JSON.parse(value) : false;
 };
 var _FixQuoteHtml = function _FixQuoteHtml(html) {
   var _h = String(html).replace(/\"/g, '"').replace(/\'/g, "'");

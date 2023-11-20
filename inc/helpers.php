@@ -19,6 +19,9 @@ function sbm_update_mega_item($id, $data) {
 
 function sbm_get_mega_item($id) {
   $opts = get_option('__SBM_MEGA_MENU_ITEM_' . $id);
+
+  if(!$opts) return false; 
+    
   $opts['settings']['extra_content'] = sbm_fix_quote_html(htmlspecialchars_decode($opts['settings']['extra_content']));
   return $opts;
 }

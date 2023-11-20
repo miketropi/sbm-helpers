@@ -1,5 +1,5 @@
 const _Boolean = (value) => {
-  return JSON.parse(value);
+  return value ? JSON.parse(value) : false;
 }
 
 const _FixQuoteHtml = (html) => {

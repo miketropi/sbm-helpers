@@ -21,7 +21,7 @@ function sbm_megamenu_nav_menu_link_attributes($atts, $menu_item, $args, $depth)
   if($depth != 0) return $atts;
 
   $megadata = sbm_get_mega_item($menu_item->ID);
-  if(!$megadata) return;
+  if(!$megadata) return $atts;
   $enable = filter_var($megadata['settings']['enable'], FILTER_VALIDATE_BOOLEAN);
 
   if($enable) {
@@ -29,4 +29,17 @@ function sbm_megamenu_nav_menu_link_attributes($atts, $menu_item, $args, $depth)
   }
 
   return $atts;
+}
+
+add_filter('SBM_HELPERS/HEADER_ACTION_BUTTONS', 'sbm_header_button_cta');
+
+function sbm_header_button_cta($buttons) {
+  $cta = get_field('button_call_to_action', 'option');
+  $buttons[] = [
+    'link' => $cta['button_link'],
+    'label' => $cta['button_text'],
+    'classes' => '__cta',
+  ];
+
+  return $buttons;
 }
