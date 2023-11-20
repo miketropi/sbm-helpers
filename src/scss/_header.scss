@@ -7,11 +7,23 @@
   }
 
   .brand-image {
-
+    
   }
 
   .site-nav {
     padding-top: 32px;
+
+    @media(max-width: 1000px) {
+      padding-top: 0;
+
+      .action-buttons, .site-menu {
+        display: none;
+      }
+
+      .sbm-button-toggle-offcanvas {
+        display: flex;
+      }
+    }
   }
 
   .action-buttons {

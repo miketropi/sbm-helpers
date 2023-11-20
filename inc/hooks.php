@@ -43,3 +43,18 @@ function sbm_header_button_cta($buttons) {
 
   return $buttons;
 }
+
+add_action('after_setup_theme', 'sbm_register_nav_menu', 0);
+
+function sbm_register_nav_menu(){
+  register_nav_menus( array(
+      'offcanvas_menu' => __( 'Offcanvas Menu', 'text_domain' ),
+  ) );
+}
+
+
+add_action('wp_footer', 'sbm_offcanvas_menu');
+
+function sbm_offcanvas_menu() {
+  sbm_helpers_load_template('offcanvas-menu');
+}

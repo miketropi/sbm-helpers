@@ -6,7 +6,7 @@ export default function MegamenuTabConfig({ tabs }) {
   return <div className="megamenu-tab-config">
     <div className="tab-heading">
       <ul>
-        {
+        { 
           tabs.map((i, t_index) => {
             let classes = ['tab-heading-item', tabEditing == i.__key ? '__active' : ''];
             return <li className={ classes.join(' ') } key={ i.__key }>

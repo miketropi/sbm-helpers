@@ -1,1 +1,1 @@
-import './modules/mega-menu-config';
+import './modules/mega-menu-config'; 

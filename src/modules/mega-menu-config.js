@@ -48,7 +48,7 @@ import { MegaContext_Provider } from '../context/MegaContext';
   
     if(rootEl) {
       const root = createRoot(newRoot);
-      root.render(
+      root.render( 
       <MegaContext_Provider menuid={ menuID }>
         <MegamenuConfigPanel />
       </MegaContext_Provider>);

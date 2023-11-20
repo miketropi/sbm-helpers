@@ -17,6 +17,9 @@
         <div class="site-menu">
           <?php sbm_navigation_location('primary'); ?>
         </div>
+        <button class="sbm-button-toggle-offcanvas">
+          <img src="<?php echo SBM_URI . 'images/apps-alt-svgrepo-com.png' ?>" alt="#">
+        </button>
       </div>
     </div>
   </div>
