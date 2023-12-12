@@ -283,6 +283,7 @@ body.sbm-megamenu-config-popup__show .sbm-megamenu-config-popup__close {
 .group-field-3cols {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 .group-field-3cols > * {
   width: calc(33.3333333333% - 20px);

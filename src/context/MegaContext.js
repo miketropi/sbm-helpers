@@ -23,6 +23,7 @@ const __DATA_MEGA_CONFIG_INIT = {
           __key: uuidv4(),
           type: '__CUSTOM_MENU__',
           heading: 'Custom Menu Title',
+          href: '#',
           items: [
             {
               __key: uuidv4(),
@@ -42,6 +43,7 @@ const __DATA_MEGA_CONFIG_INIT = {
           __key: uuidv4(),
           type: '__WP_MENU__',
           heading: 'Menu Title',
+          href: '#',
           menuid: '',
         }
       ]

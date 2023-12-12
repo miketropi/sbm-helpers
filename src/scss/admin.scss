@@ -334,6 +334,7 @@ body.sbm-megamenu-config-popup__show {
 .group-field-3cols {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 
   > * {
     width: calc((100% / 3) - 20px);

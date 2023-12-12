@@ -219,6 +219,21 @@ function MegamenuTabConfig(_ref) {
                   },
                   value: i.target
                 })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("label", {
+                className: "field-item",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+                  className: "field-item__label",
+                  children: "Columns"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+                  type: "number",
+                  placeholder: "Columns",
+                  min: "1",
+                  max: "4",
+                  onChange: function onChange(e) {
+                    updateField(e.target.value, "tabs.".concat(i_index, ".settings.columns"));
+                  },
+                  value: i.settings.columns
+                })]
               })]
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
@@ -267,6 +282,19 @@ function MegamenuTabConfig(_ref) {
                         updateField(e.target.value, "tabs.".concat(i_index, ".children.").concat(c_index, ".heading"));
                       },
                       value: c.heading
+                    })]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("label", {
+                    className: "field-item",
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+                      className: "field-item__label",
+                      children: "Href"
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+                      type: "text",
+                      placeholder: "Href",
+                      onChange: function onChange(e) {
+                        updateField(e.target.value, "tabs.".concat(i_index, ".children.").concat(c_index, ".href"));
+                      },
+                      value: c.href
                     })]
                   }), c.type == '__CUSTOM_MENU__' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
                     className: "field-item",
@@ -466,6 +494,7 @@ var __DATA_MEGA_CONFIG_INIT = {
       __key: (0,uuid__WEBPACK_IMPORTED_MODULE_3__["default"])(),
       type: '__CUSTOM_MENU__',
       heading: 'Custom Menu Title',
+      href: '#',
       items: [{
         __key: (0,uuid__WEBPACK_IMPORTED_MODULE_3__["default"])(),
         name: 'Nav Item #1',
@@ -481,6 +510,7 @@ var __DATA_MEGA_CONFIG_INIT = {
       __key: (0,uuid__WEBPACK_IMPORTED_MODULE_3__["default"])(),
       type: '__WP_MENU__',
       heading: 'Menu Title',
+      href: '#',
       menuid: ''
     }]
   }]

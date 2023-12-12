@@ -58,6 +58,14 @@ export default function MegamenuTabConfig({ tabs }) {
                     updateField(e.target.value, `tabs.${ i_index }.target`);
                   } } value={ i.target } />
                 </label>
+
+                <label className="field-item">
+                  <span className="field-item__label">Columns</span>
+                  <input type="number" placeholder="Columns" min="1" max="4" onChange={ e => {
+                    updateField(e.target.value, `tabs.${ i_index }.settings.columns`);
+                  } } value={ i.settings.columns } />
+                </label>
+                {/* { JSON.stringify(i.settings) } */}
               </div>
             </fieldset>
 
@@ -91,6 +99,13 @@ export default function MegamenuTabConfig({ tabs }) {
                           updateField(e.target.value, `tabs.${ i_index }.children.${ c_index }.heading`);
                         } } value={ c.heading } />
                       </label>
+
+                      <label className="field-item">
+                        <span className="field-item__label">Href</span>
+                        <input type="text" placeholder="Href" onChange={ e => {
+                          updateField(e.target.value, `tabs.${ i_index }.children.${ c_index }.href`);
+                        } } value={ c.href } />
+                      </label> 
 
                       {
                         c.type == '__CUSTOM_MENU__' &&

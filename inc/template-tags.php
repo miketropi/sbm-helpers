@@ -62,7 +62,8 @@ function sbm_mega_menu_tag($menuid = 0) {
           <ul class="sbm-mega-menu__tab-heading-ul">
             <?php foreach($tabs as $_index => $tab) : 
               $active_class = $_index == 0 ? '__active' : '';
-              $cols = $tab['settings']['columns'];
+              
+              
             ?>
             <li class="tab-heading-item tab-content-item__<?php echo $tab['__key'] ?> <?php echo $active_class; ?>" data-key="<?php echo $tab['__key'] ?>">
               <a class="nav-link" href="<?php echo $tab['href'] ?>" target="<?php echo $tab['target']; ?>"><?php echo $tab['name']; ?></a>
@@ -73,6 +74,7 @@ function sbm_mega_menu_tag($menuid = 0) {
         <div class="sbm-mega-menu__tab-content">
           <?php foreach($tabs as $_index => $tab) : 
             $active_class = $_index == 0 ? '__active' : '';  
+            $cols = $tab['settings']['columns'];
           ?>
           <div data-key="<?php echo $tab['__key'] ?>" class="tab-content-item tab-content-item__<?php echo $tab['__key'] ?> <?php echo $active_class; ?> __columns-<?php echo $cols; ?>">
             <?php
@@ -81,7 +83,7 @@ function sbm_mega_menu_tag($menuid = 0) {
               ?>
               <div class="sbm-mega-menu__children-item">
                 <div class="sbm-mega-menu__children-item-inner">
-                  <h4><?php echo $c['heading'] ?></h4>
+                  <h4><a href="<?php echo $c['href'] ?>"><?php echo $c['heading'] ?></a></h4>
                   <?php if($c['type'] == '__CUSTOM_MENU__') {
                     sbm_mega_menu_custom_type_tag($c['items']);
                   } else if($c['type'] == '__WP_MENU__') {
