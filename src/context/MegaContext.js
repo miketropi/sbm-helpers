@@ -110,6 +110,7 @@ const MegaContext_Provider = ({ children, menuid }) => {
       __key: uuidv4(),
       type: '__CUSTOM_MENU__',
       heading: 'Heading ' + (__megaData.tabs[tabIndex].children.length + 1),
+      href: '',
       items: []
     })
 

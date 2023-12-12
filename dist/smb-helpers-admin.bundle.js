@@ -621,6 +621,7 @@ var MegaContext_Provider = function MegaContext_Provider(_ref) {
       __key: (0,uuid__WEBPACK_IMPORTED_MODULE_3__["default"])(),
       type: '__CUSTOM_MENU__',
       heading: 'Heading ' + (__megaData.tabs[tabIndex].children.length + 1),
+      href: '',
       items: []
     });
     setMegaData(__megaData);
